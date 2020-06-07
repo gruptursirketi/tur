@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+    </h:head>
+    <h:body>
+
+        <h:form id="araclar-form">
+            <div class="form-group">
+                <label for="inputMarka">ARAÇ MARKA</label>
+                <h:inputText id="inputMarka" styleClass="form-control"  value="#{araclarController.entity.arac_marka}" validator="#{araclarController.validate}"/>
+                <h:message for="inputMarka" style="color: red" />
+            </div>
+
+            <div class="form-group">
+                <label for="inputPlaka">ARAÇ PLAKA</label>
+                <h:inputText id="inputPlaka" styleClass="form-control"  value="#{araclarController.entity.arac_plaka}" validator="#{araclarController.validate}"/>
+                <h:message for="inputPlaka" style="color: red" />
+            </div>
+
+            <h:commandButton styleClass="btn btn btn-outline-info" value="Create" action="#{araclarController.create()}">
+                <f:ajax execute="araclar-form" render="araclar-form araclar-table"/>
+            </h:commandButton>
+
+        </h:form>
+    </h:body>
+</html>
+

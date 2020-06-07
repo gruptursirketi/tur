@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+    </h:head>
+    <h:body>
+        <h:form id="subeler-table">
+            <div class="container">
+
+                <div class="row">
+
+                    <h:commandButton styleClass="btn btn-outline-warning" action="/anasayfa" value=" anasayfaya don"/>
+                    <h:commandButton styleClass="btn btn-primary" value="YENİ ŞUBE OLUŞTUR" action="/subeler/create"/>
+                    <div class="container"></div>
+                    <hr/>
+
+                    <h:dataTable styleClass="table table-hover"  value="#{subelerController.read}" var="s">
+                        <h:column>
+                            <f:facet name="header">ŞUBE ID</f:facet>
+                                #{s.sube_id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">ŞUBE İL</f:facet>
+                                #{s.sube_il}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">ŞUBE İLÇE</f:facet>
+                                #{s.sube_ilce}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">ŞUBE İSİM</f:facet>
+                                #{s.sube_isim}
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header">SEÇENEKLER</f:facet>
+                            <h:commandButton styleClass="btn btn-outline-success"   value="Update" action="#{subelerController.updateForm(s)}"/> 
+                            <h:commandButton styleClass="btn btn-outline-danger" value="Delete" action="#{subelerController.deleteConfirm(s)}"/> 
+                        </h:column>
+
+                    </h:dataTable>
+                </div> 
+            </div>
+
+        </h:form>
+
+    </h:body>
+</html>
+

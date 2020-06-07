@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:commandButton styleClass="btn btn-info btn-lg btn-block m-3" action="/module/subeler/index" value="SUBELER"/>
+            <br/>
+            <h:commandButton styleClass="btn btn-danger btn-lg btn-block m-3" action="/module/araclar/index" value="ARAÇLAR"/>
+            <br/>
+            <h:commandButton styleClass="btn btn-secondary btn-lg btn-block m-3" action="/document/document" value="DÖKÜMANLAR"/>
+            <br />
+            <h:commandButton styleClass="btn btn-outline-primary" action="/logout?faces-redirect=true" value="LOGOUT"/>
+        </h:form>
+    </h:body>
+</html>
+
